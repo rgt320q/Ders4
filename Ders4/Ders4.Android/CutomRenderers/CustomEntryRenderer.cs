@@ -17,7 +17,7 @@ using Xamarin.Forms.Platform.Android;
 [assembly: Xamarin.Forms.ExportRenderer(typeof (CustomEntry), typeof(CustomEntryRenderer))]
 namespace Ders4.Droid.CutomRenderers
 {
-    [Obsolete]
+    
     public class CustomEntryRenderer:EntryRenderer
     {
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)

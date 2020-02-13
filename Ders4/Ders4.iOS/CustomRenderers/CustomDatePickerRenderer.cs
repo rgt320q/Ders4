@@ -1,11 +1,11 @@
 ﻿using Ders4.CustomControls;
-using Ders4.Droid.CutomRenderers;
+using Ders4.iOS.CustomRenderers;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
+using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(CustomDatePicker),
     typeof(CustomDatePickerRenderer))]
-namespace Ders4.Droid.CutomRenderers
+namespace Ders4.iOS.CustomRenderers
 {
     public class CustomDatePickerRenderer:DatePickerRenderer
     {
@@ -15,9 +15,9 @@ namespace Ders4.Droid.CutomRenderers
 
             CustomDatePicker datePicker = (CustomDatePicker)Element;
 
-            if (datePicker!=null)
+            if (datePicker != null)
             {
-                Control.SetTextColor(datePicker.TextColor.ToAndroid());
+                Control.TextColor= datePicker.TextColor.ToUIColor();
             }
 
         }

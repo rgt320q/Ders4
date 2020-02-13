@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Ders4.View.ListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Refresh"
+            Activated="onMenuRefresh"
+            Order="Primary"
+            Priority="1" />
+        <ToolbarItem
+            Name="Add"
+            Activated="onMenuInsert"
+            Order="Secondary"
+            Priority="2" />
+        <ToolbarItem
+            Name="List"
+            Order="Primary"
+            Priority="3" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lstStudents" ItemsSource="{Binding .}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Detail="{Binding Surname}" Text="{Binding Name}">
+                            <TextCell.ContextActions>
+                                <MenuItem
+                                    Clicked="onMenuDelete"
+                                    CommandParameter="{Binding Id}"
+                                    IsDestructive="True"
+                                    Text="Delete" />
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
